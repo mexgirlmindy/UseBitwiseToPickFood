@@ -1,0 +1,20 @@
+import numpy
+
+print('Enter first number')
+bit1 = int(input())
+
+print('Enter second number')
+bit2 = int(input())
+
+def reduceBy16(num):
+    if num >15:
+        num = num-16
+        return reduceBy16(num)
+    elif num <= 15:
+        return num
+
+# Goal is to find API  to scrape google searches
+# Hard loaded locations are okay for now
+list1 = ["Seven Spice", "Half Shell", "Arbys", "Sonic", "IHOP", "Jasons Deli", "Zoes Kitchen", "Carrabbas", "Taco Bell", "McDonalds","Texas Roadhouse","Cook Out","Dairy Queen","BJs","China Supper Buffet", "bbq"]
+
+print('We can eat ' + list1[reduceBy16(bit1) & reduceBy16(bit2)] + ' or ' + list1[reduceBy16(bit1) | reduceBy16(bit2)])
